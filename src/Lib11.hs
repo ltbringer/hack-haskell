@@ -4,10 +4,16 @@ module Lib11
 
 import Data.Vector.Primitive as V
 
-type Width = Int
-type Pillar = Int
-type Area = Int
-type Pillars = V.Vector Pillar
+data MaxAreaRecord = MaxAreaRecord {
+    width :: Int
+    , maxSoFar :: Int
+    , left :: Int
+    , right :: Int
+    , l :: Int
+    , r :: Int
+    , valid :: Bool
+} deriving (Show)
+
 ---------------------------------------------------------------------------------------
 -- 11. Container With Most Water
 -- Medium
@@ -37,23 +43,43 @@ type Pillars = V.Vector Pillar
 -- 0 <= height[i] <= 10^4
 ---------------------------------------------------------------------------------------
 maxArea :: V.Vector Int -> Int
-maxArea hs = maxAreaUtils hs w maxAreaSoFar left right l r valid
+maxArea hs = maxAreaUtils hs record
   where
-    w = V.length hs - 1
-    l = 0
-    r = V.length hs - 1
-    left = hs V.! l
-    right = hs V.! r
-    valid = l < r
-    maxAreaSoFar = 0
+    record = MaxAreaRecord {
+        width = V.length hs - 1
+        , maxSoFar = 0
+        , left = hs V.! 0
+        , right = hs V.! (V.length hs - 1)
+        , l = 0
+        , r = V.length hs - 1
+        , valid = True
+    }
 
 
-maxAreaUtils :: Pillars -> Width -> Area -> Pillar -> Pillar -> Int -> Int -> Bool -> Area
-maxAreaUtils hs width maxAreaSoFar left right l r valid = case (left < right, valid) of
-    (_, False) -> maxAreaSoFar
-    (True, True) -> maxAreaUtils hs w area (hs V.! (l + 1)) right (l + 1) r (l + 1 < r)
-    (False, True) -> maxAreaUtils hs w area left (hs V.! (r - 1)) l (r - 1) (l < r - 1) 
+maxAreaUtils :: V.Vector Int -> MaxAreaRecord -> Int
+maxAreaUtils hs record = case (left record < right record, valid record) of
+    (_, False) -> maxSoFar record
+
+    (True, True) -> maxAreaUtils hs MaxAreaRecord {
+        width = w
+        , maxSoFar = area
+        , left = hs V.! (l record + 1)
+        , right = right record
+        , l = l record + 1
+        , r = r record
+        , valid = l record + 1 < r record
+    }
+
+    (False, True) -> maxAreaUtils hs MaxAreaRecord {
+        width = w
+        , maxSoFar = area
+        , left = left record
+        , right = hs V.! (r record - 1)
+        , l = l record
+        , r = r record - 1
+        , valid = l record < r record - 1
+    } 
   where
-    currentArea = (width * min left right)
-    area = max maxAreaSoFar currentArea
-    w = width - 1
+    currentArea = (width record * (min (left record) (right record)))
+    area = max (maxSoFar record) currentArea
+    w = (width record) - 1
