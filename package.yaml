@@ -1,0 +1,52 @@
+name:                leetcode-haskell
+version:             0.1.0.0
+github:              "ltbringer/leetcode-haskell"
+license:             BSD3
+author:              "amresh.venugopal"
+maintainer:          "amresh.venugopal@gmail.com"
+copyright:           "2022 amresh.venugopal"
+
+extra-source-files:
+- README.md
+- CHANGELOG.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/ltbringer/leetcode-haskell#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- hashmap
+- containers
+
+ghc-options:
+- -Wall
+- -Wcompat
+- -Widentities
+- -Wincomplete-record-updates
+- -Wincomplete-uni-patterns
+- -Wmissing-export-lists
+- -Wmissing-home-modules
+- -Wpartial-fields
+- -Wredundant-constraints
+
+library:
+  source-dirs: src
+
+tests:
+  leetcode-haskell-test:
+    main:                Spec217.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - leetcode-haskell
+    - tasty
+    - tasty-hunit
