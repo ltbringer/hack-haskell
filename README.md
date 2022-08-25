@@ -1,4 +1,5 @@
 # leetcode-haskell
+[![Haskell CI](https://github.com/ltbringer/leetcode-haskell/actions/workflows/haskell.yml/badge.svg?branch=main)](https://github.com/ltbringer/leetcode-haskell/actions/workflows/haskell.yml)
 
 ## Introduction
 
