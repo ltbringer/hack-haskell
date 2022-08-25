@@ -25,6 +25,7 @@ source-repository head
 
 library
   exposed-modules:
+      Lib11
       Lib217
       Lib242
   other-modules:
@@ -36,12 +37,14 @@ library
       base >=4.7 && <5
     , containers
     , hashmap
+    , vector
   default-language: Haskell2010
 
 test-suite leetcode-haskell-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      LC11Spec
       LC217Spec
       LC242Spec
       Paths_leetcode_haskell
@@ -55,4 +58,5 @@ test-suite leetcode-haskell-test
     , hspec
     , hspec-discover
     , leetcode-haskell
+    , vector
   default-language: Haskell2010
