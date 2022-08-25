@@ -10,11 +10,11 @@ Testing my proficiency in Haskell using problems from leetcode.com. The plan is 
 
 # Problems
 
-| # | Problem                 | Difficulty | Solution                        | Tests                                             |
-|---|-------------------------|------------|---------------------------------|---------------------------------------------------|
-| 1 | [Contains Duplicate][1] | Easy       | [:green_book:](./src/Lib217.hs) | [:chart_with_upwards_trend:](./test/LC217Spec.hs) |
-| 2 | [Valid Anagrams][2]     | Easy       | [:green_book:](./src/Lib242.hs) | [:chart_with_upwards_trend:](./test/LC242Spec.hs) |
-| 3 | [Container With Most Water][3]|Medium| [:orange_book:](./src/Lib11.hs) | [:chart_with_upwards_trend:](./test/LC11Spec.hs)  |
+| # | Problem                        | Solution                        | Tests                                             |
+|---|--------------------------------|---------------------------------|---------------------------------------------------|
+| 1 | [Contains Duplicate][1]        | [:green_book:](./src/Lib217.hs) | [:chart_with_upwards_trend:](./test/LC217Spec.hs) |
+| 2 | [Valid Anagrams][2]            | [:green_book:](./src/Lib242.hs) | [:chart_with_upwards_trend:](./test/LC242Spec.hs) |
+| 3 | [Container With Most Water][3] | [:orange_book:](./src/Lib11.hs) | [:chart_with_upwards_trend:](./test/LC11Spec.hs)  |
 
 
 [1]: https://leetcode.com/problems/contains-duplicate/
