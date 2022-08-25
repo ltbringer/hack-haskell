@@ -11,6 +11,6 @@ spec = do
 		it "should return the maximum volume = 49" $ do
 			maxArea xs `shouldBe` 49
 
-		let xs = V.fromList [1,1]
+		let ys = V.fromList [1,1]
 		it "should return the maximum volume = 1" $ do
-			maxArea xs `shouldBe` 1
+			maxArea ys `shouldBe` 1
