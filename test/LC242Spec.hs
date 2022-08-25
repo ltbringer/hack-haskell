@@ -12,3 +12,6 @@ spec = do
 
     it "returns False since apple, appe are not anagrams" $
       (isAnagram "apple" "appe") `shouldBe` False
+
+    it "returns True since anagram, nagaram are anagrams" $
+      (isAnagram "anagram" "nagaram") `shouldBe` True
