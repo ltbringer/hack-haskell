@@ -26,6 +26,7 @@ source-repository head
 library
   exposed-modules:
       Lib217
+      Lib242
   other-modules:
       Paths_leetcode_haskell
   hs-source-dirs:
@@ -39,8 +40,10 @@ library
 
 test-suite leetcode-haskell-test
   type: exitcode-stdio-1.0
-  main-is: Spec217.hs
+  main-is: Spec.hs
   other-modules:
+      LC217Spec
+      LC242Spec
       Paths_leetcode_haskell
   hs-source-dirs:
       test
@@ -49,7 +52,7 @@ test-suite leetcode-haskell-test
       base >=4.7 && <5
     , containers
     , hashmap
+    , hspec
+    , hspec-discover
     , leetcode-haskell
-    , tasty
-    , tasty-hunit
   default-language: Haskell2010

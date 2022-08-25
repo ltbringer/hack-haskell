@@ -40,7 +40,7 @@ library:
 
 tests:
   leetcode-haskell-test:
-    main:                Spec217.hs
+    main:                Spec.hs
     source-dirs:         test
     ghc-options:
     - -threaded
@@ -48,5 +48,5 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - leetcode-haskell
-    - tasty
-    - tasty-hunit
+    - hspec
+    - hspec-discover
