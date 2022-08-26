@@ -57,7 +57,7 @@ maxArea hs = maxAreaUtils hs record
 
 
 maxAreaUtils :: V.Vector Int -> MaxAreaRecord -> Int
-maxAreaUtils hs record = case (left record < right record, valid record) of
+maxAreaUtils hs record = case (lBar < rBar, valid record) of
     (_, False) -> maxSoFar record
 
     (True, True) -> maxAreaUtils hs MaxAreaRecord {
@@ -80,6 +80,8 @@ maxAreaUtils hs record = case (left record < right record, valid record) of
         , valid = l record < r record - 1
     } 
   where
-    currentArea = (width record * (min (left record) (right record)))
+    lBar = left record
+    rBar = right record
+    currentArea = width record * (min lBar rBar)
     area = max (maxSoFar record) currentArea
     w = (width record) - 1
