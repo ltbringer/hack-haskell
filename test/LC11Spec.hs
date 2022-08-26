@@ -17,7 +17,4 @@ spec = do
 			maxArea (V.fromList [5,18,17]) `shouldBe` 17
 
 		it "should return the max area = 17" $ do
-			maxArea (V.fromList [5,18,17]) `shouldBe` 17
-
-		it "should return the max area = 17" $ do
 			maxArea (V.fromList [2,3,4,5,18,17,6]) `shouldBe` 17
