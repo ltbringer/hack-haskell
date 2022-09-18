@@ -82,6 +82,6 @@ maxAreaUtils hs record = case (lBar < rBar, valid record) of
   where
     lBar = left record
     rBar = right record
-    currentArea = width record * (min lBar rBar)
+    currentArea = width record * min lBar rBar
     area = max (maxSoFar record) currentArea
-    w = (width record) - 1
+    w = width record - 1
