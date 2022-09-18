@@ -26,8 +26,5 @@ import qualified Data.Set as Set
 -- 1 <= s.length, t.length <= 5 * 10^4
 -- s and t consist of lowercase English letters.
 --------------------------------------------------------------------------------
-strAsSet :: String -> Set.Set Char
-strAsSet xs = Set.fromList xs
-
 isAnagram :: String -> String -> Bool
-isAnagram s t = strAsSet s == strAsSet t
+isAnagram s t = Set.fromList s == Set.fromList t
