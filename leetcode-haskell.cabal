@@ -25,7 +25,10 @@ source-repository head
 
 library
   exposed-modules:
+      Basic.Functors
+      Basic.Monads
       BinaryTree
+      FunctorBinaryTree
       Lib11
       Lib217
       Lib242
@@ -45,6 +48,7 @@ test-suite leetcode-haskell-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      Basic.FunctorsSpec
       BinaryTreeSpec
       LC11Spec
       LC217Spec
