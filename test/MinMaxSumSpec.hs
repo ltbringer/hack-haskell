@@ -2,7 +2,6 @@ module MinMaxSumSpec where
 
 import Test.Hspec ( describe, it, shouldBe, Spec )
 import MinMaxSum (minMaxSumArr)
-import Text.Read.Lex (expect)
 
 spec :: Spec
 spec = do
@@ -12,5 +11,5 @@ spec = do
     let results = map (minMaxSumArr . fst) cases
     let expected = map snd cases
     describe "produces the smallest and largest sum from an integer array." $ do
-        it "matches expected min max valus" $ do
+        it "matches expected min max values" $ do
             results `shouldBe` expected
