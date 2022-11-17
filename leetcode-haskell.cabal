@@ -34,6 +34,7 @@ library
       Lib217
       Lib242
       MinMaxSum
+      TripletComp
   other-modules:
       Paths_leetcode_haskell
   hs-source-dirs:
@@ -45,6 +46,7 @@ library
     , containers
     , hashmap
     , mtl
+    , random
     , split
     , text
     , vector
@@ -60,6 +62,7 @@ test-suite leetcode-haskell-test
       LC217Spec
       LC242Spec
       MinMaxSumSpec
+      TripletCompSpec
       Paths_leetcode_haskell
   hs-source-dirs:
       test
@@ -73,6 +76,7 @@ test-suite leetcode-haskell-test
     , hspec-discover
     , leetcode-haskell
     , mtl
+    , random
     , split
     , text
     , vector

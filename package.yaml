@@ -28,6 +28,7 @@ dependencies:
 - array
 - text
 - split
+- random
 
 ghc-options:
 - -Wall
