@@ -24,6 +24,7 @@ dependencies:
 - hashmap
 - containers
 - vector
+- mtl
 
 ghc-options:
 - -Wall
