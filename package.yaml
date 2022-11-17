@@ -25,6 +25,9 @@ dependencies:
 - containers
 - vector
 - mtl
+- array
+- text
+- split
 
 ghc-options:
 - -Wall
