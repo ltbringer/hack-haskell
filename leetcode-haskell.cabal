@@ -33,6 +33,7 @@ library
       Lib11
       Lib217
       Lib242
+      Lib347
       MinMaxSum
       TripletComp
   other-modules:
@@ -45,6 +46,7 @@ library
     , base >=4.7 && <5
     , containers
     , hashmap
+    , heap
     , mtl
     , random
     , split
@@ -72,6 +74,7 @@ test-suite leetcode-haskell-test
     , base >=4.7 && <5
     , containers
     , hashmap
+    , heap
     , hspec
     , hspec-discover
     , leetcode-haskell
